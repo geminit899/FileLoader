@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IndexDao">
+    <select id="getAllSuffix" resultType="String">
+        SELECT
+        suffix
+        FROM suffix_type
+    </select>
+
+    <select id="getTypeBySuffix" resultType="String">
+        SELECT
+        type
+        FROM suffix_type
+        WHERE suffix = #{suffix}
+    </select>
+
+    <insert id="insertNewSuffix">
+        INSERT
+        INTO suffix_type
+        (suffix, type)
+        VALUES
+        (#{suffix}, #{type});
+    </insert>
+
+</mapper>
